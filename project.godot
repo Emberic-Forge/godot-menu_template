@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="MenuTemplate"
+run/main_scene="uid://cvuj7m77rrgl1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LoadingSystem="*res://loading_system/loading_system.tscn"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/extended_controls/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 

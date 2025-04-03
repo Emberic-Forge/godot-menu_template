@@ -2,10 +2,11 @@
 
 [ext_resource type="LabelSettings" uid="uid://cyqs1t656hh6s" path="res://settings/labels/title_label_settings.tres" id="1_ptfkf"]
 [ext_resource type="Theme" uid="uid://by25sgm60o7dh" path="res://settings/ui_theme.tres" id="1_w63va"]
+[ext_resource type="Script" uid="uid://byxfv787afbih" path="res://menu/scripts/options_menu.gd" id="1_ybiyf"]
 [ext_resource type="Script" uid="uid://6lywy6x148wo" path="res://components/menu_button/scripts/volume_slider.gd" id="2_w63va"]
-[ext_resource type="Script" uid="uid://bcfj238oy7chf" path="res://components/menu_button/scripts/scriptable_button.gd" id="3_ybiyf"]
 
 [node name="options_menu" type="CanvasLayer"]
+script = ExtResource("1_ybiyf")
 
 [node name="order" type="VBoxContainer" parent="."]
 anchors_preset = 8
@@ -126,6 +127,3 @@ alignment = 2
 texture_filter = 1
 layout_mode = 2
 text = "Back"
-script = ExtResource("3_ybiyf")
-expression = "get_parent().get_parent().get_parent().queue_free()"
-metadata/_custom_type_script = "uid://bcfj238oy7chf"

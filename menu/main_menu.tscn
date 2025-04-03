@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvuj7m77rrgl1"]
+[gd_scene load_steps=5 format=3 uid="uid://cvuj7m77rrgl1"]
 
 [ext_resource type="LabelSettings" uid="uid://cyqs1t656hh6s" path="res://settings/labels/title_label_settings.tres" id="1_1x3cv"]
-[ext_resource type="Script" uid="uid://c538tm5wl4nsq" path="res://components/menu_button/scripts/load_scene_button.gd" id="2_jc45y"]
-[ext_resource type="Script" uid="uid://c6abpywbpkk5k" path="res://components/menu_button/scripts/open_menu_button.gd" id="3_s8mfa"]
-[ext_resource type="Script" uid="uid://bcfj238oy7chf" path="res://components/menu_button/scripts/scriptable_button.gd" id="4_0tw43"]
+[ext_resource type="Script" uid="uid://cjr8o6en05wca" path="res://menu/scripts/main_menu.gd" id="1_jc45y"]
+[ext_resource type="PackedScene" uid="uid://brp0pkkbkryjo" path="res://menu/loading_screen.tscn" id="3_1x3cv"]
 [ext_resource type="PackedScene" uid="uid://cwxycxpmoxmmb" path="res://menu/options_menu.tscn" id="4_jc45y"]
 
 [node name="main_menu" type="CanvasLayer"]
+script = ExtResource("1_jc45y")
+gameplay_scene_to_load_on_play = "uid://dxui686wix54s"
+load_check_refresh_rate = 0.1
+options_menu = ExtResource("4_jc45y")
+loading_screen = ExtResource("3_1x3cv")
 
 [node name="order" type="VBoxContainer" parent="."]
 anchors_preset = 8
@@ -34,16 +38,11 @@ layout_mode = 2
 [node name="play" type="Button" parent="order"]
 layout_mode = 2
 text = "Play"
-script = ExtResource("2_jc45y")
 
 [node name="options" type="Button" parent="order"]
 layout_mode = 2
 text = "Options"
-script = ExtResource("3_s8mfa")
-menu_to_open = ExtResource("4_jc45y")
 
 [node name="quit" type="Button" parent="order"]
 layout_mode = 2
 text = "Quit"
-script = ExtResource("4_0tw43")
-expression = "fully_quit()"
