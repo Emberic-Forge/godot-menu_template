@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cxjvx8fah5a1s"]
 
 [ext_resource type="AnimationLibrary" uid="uid://ddym2urs41c2w" path="res://settings/transitions/default_loading_transitions.res" id="1_1ucj6"]
-[ext_resource type="Script" uid="uid://cqut1a7ha7woj" path="res://loading_system/scripts/transition_scene.gd" id="1_xwa2s"]
+[ext_resource type="Script" uid="uid://cqut1a7ha7woj" path="res://globals/loading_system/scripts/transition_scene.gd" id="1_xwa2s"]
 
 [sub_resource type="Animation" id="Animation_goxn1"]
 length = 0.001

@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwxycxpmoxmmb"]
+[gd_scene load_steps=6 format=3 uid="uid://cwxycxpmoxmmb"]
 
 [ext_resource type="LabelSettings" uid="uid://cyqs1t656hh6s" path="res://settings/labels/title_label_settings.tres" id="1_ptfkf"]
 [ext_resource type="Theme" uid="uid://by25sgm60o7dh" path="res://settings/ui_theme.tres" id="1_w63va"]
 [ext_resource type="Script" uid="uid://byxfv787afbih" path="res://menu/scripts/options_menu.gd" id="1_ybiyf"]
 [ext_resource type="Script" uid="uid://6lywy6x148wo" path="res://components/menu_button/scripts/volume_slider.gd" id="2_w63va"]
+[ext_resource type="PackedScene" uid="uid://chmsafdhygtym" path="res://menu/options/controls/controls.tscn" id="5_h1dxb"]
 
 [node name="options_menu" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_ybiyf")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="order" type="VBoxContainer" parent="."]
 anchors_preset = 8
@@ -31,7 +40,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="body" type="PanelContainer" parent="order"]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(400, 250)
 layout_mode = 2
 
 [node name="margin" type="MarginContainer" parent="order/body"]
@@ -39,12 +48,17 @@ layout_mode = 2
 
 [node name="tab" type="TabContainer" parent="order/body/margin"]
 layout_mode = 2
-current_tab = 0
+current_tab = 1
 all_tabs_in_front = true
+
+[node name="Graphics" type="VBoxContainer" parent="order/body/margin/tab"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="Audio" type="VBoxContainer" parent="order/body/margin/tab"]
 layout_mode = 2
-metadata/_tab_index = 0
+metadata/_tab_index = 1
 
 [node name="margin" type="MarginContainer" parent="order/body/margin/tab/Audio"]
 layout_mode = 2
@@ -109,14 +123,10 @@ size_flags_vertical = 1
 script = ExtResource("2_w63va")
 metadata/_custom_type_script = "uid://6lywy6x148wo"
 
-[node name="Controls" type="VBoxContainer" parent="order/body/margin/tab"]
+[node name="Controls" parent="order/body/margin/tab" instance=ExtResource("5_h1dxb")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="Graphics" type="VBoxContainer" parent="order/body/margin/tab"]
-visible = false
-layout_mode = 2
+input_actions = Array[String](["test_a", "test_b", "test_c"])
 metadata/_tab_index = 2
 
 [node name="bottom" type="HBoxContainer" parent="order"]

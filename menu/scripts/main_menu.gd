@@ -12,10 +12,17 @@ extends CanvasLayer
 var options_ins : OptionsMenu
 
 func _ready() -> void:
+	# Get the current os name
+	var os_name := OS.get_name()
+
 	# Connect events
 	play.button_down.connect(_start_game)
 	options.button_down.connect(_open_options)
-	quit.button_down.connect(_exit_game)
+	# If the os is web-based, hide the quit button
+	if os_name != "Web":
+		quit.button_down.connect(_exit_game)
+	else:
+		quit.visible = false
 
 	# Initialize options menu
 	options_ins = options_menu.instantiate()

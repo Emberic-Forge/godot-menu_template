@@ -3,7 +3,7 @@
 [ext_resource type="LabelSettings" uid="uid://cyqs1t656hh6s" path="res://settings/labels/title_label_settings.tres" id="1_1x3cv"]
 [ext_resource type="Script" uid="uid://cjr8o6en05wca" path="res://menu/scripts/main_menu.gd" id="1_jc45y"]
 [ext_resource type="PackedScene" uid="uid://brp0pkkbkryjo" path="res://menu/loading_screen.tscn" id="3_1x3cv"]
-[ext_resource type="PackedScene" uid="uid://cwxycxpmoxmmb" path="res://menu/options_menu.tscn" id="4_jc45y"]
+[ext_resource type="PackedScene" uid="uid://cwxycxpmoxmmb" path="res://menu/options/options_menu.tscn" id="4_jc45y"]
 
 [node name="main_menu" type="CanvasLayer"]
 script = ExtResource("1_jc45y")
